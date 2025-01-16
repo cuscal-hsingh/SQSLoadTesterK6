@@ -12,7 +12,7 @@ jobs:
       id-token: write #needed for GitHub OIDC token for AWS
 
   steps:
-    - name: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v4
 
     - name: Set up K6
