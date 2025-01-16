@@ -19,13 +19,13 @@ jobs:
         uses: grafana/setup-k6-action@v1
 
       # configure AWS login for SQS invocation
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        id: credentials
-        with:
-          audience: sts.amazonaws.com # using default role as we are using the official action.
-          role-to-assume: ${{ vars.AWS_OIDC_ROLE_ARN }}
-          aws-region: 'ap-southeast-2'
+      #- name: Configure AWS credentials
+      #  uses: aws-actions/configure-aws-credentials@v4
+      #  id: credentials
+      #  with:
+       #   audience: sts.amazonaws.com # using default role as we are using the official action.
+       #   role-to-assume: ${{ vars.AWS_OIDC_ROLE_ARN }}
+        #  aws-region: 'ap-southeast-2'
 
       - name: Run K6 script
         uses: grafana/run-k6-action@v1
