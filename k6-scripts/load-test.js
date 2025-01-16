@@ -6,7 +6,7 @@ import { AWSConfig, SQSClient } from 'https://jslib.k6.io/aws/0.12.3/sqs.js';
 });*/
 
 const awsConfig = new AWSConfig({
-    region: secrets.AWS_REGION,
+    region: __ENV.AWS_REGION,
     accessKeyId: __ENV.AWS_ACCESS_KEY_ID,
     secretAccessKey: __ENV.AWS_SECRET_ACCESS_KEY,
     sessionToken: __ENV.AWS_SESSION_TOKEN,

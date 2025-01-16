@@ -6,10 +6,6 @@ jobs:
   load-test:
     runs-on: ubuntu-latest
     environment: dev
-    #permissions:
-    #  actions: read
-    #  contents: write
-    #  id-token: write # needed for GitHub OIDC token for AWS
 
     steps:
       - name: Checkout repository
