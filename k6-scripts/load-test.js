@@ -17,10 +17,15 @@ const sqs = new SQSClient(awsConfig);
 const queueUrl = 'https://sqs.ap-southeast-2.amazonaws.com/990522850489/SQSLoadTesterK6';
 
 export default async function () {
-    await sqs.sendMessage(queueUrl, 'test message', {
-        messageAttributes: {
-            'Attribute1': { type: 'String', value: 'Value1' },
-            'Attribute2': { type: 'Number', value: '123' },
-        },
-    });
+    try {
+        const response = await sqs.sendMessage(queueUrl, 'test message', {
+            messageAttributes: {
+                'Attribute1': { type: 'String', value: 'Hamesh ' },
+                'Attribute2': { type: 'Number', value: 'K6 Test Value' },
+            },
+        });
+        console.log('Message sent successfully:', response);
+    } catch (error) {
+        console.error('Error sending message:', error);
+    }
 }
