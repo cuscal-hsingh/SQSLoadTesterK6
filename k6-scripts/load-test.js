@@ -1,10 +1,5 @@
 import { AWSConfig, SQSClient } from 'https://jslib.k6.io/aws/0.12.3/sqs.js';
 
-/*const awsConfig = new AWSConfig({
-    region: 'ap-southeast-2',
-
-});*/
-
 const awsConfig = new AWSConfig({
     region: __ENV.AWS_REGION,
     accessKeyId: __ENV.AWS_ACCESS_KEY_ID,
